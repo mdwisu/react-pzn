@@ -1,16 +1,22 @@
 export default function HelloWorld() {
   return (
     <>
+      <h1>hello world</h1>
       <HeaderHelloWorld />
       <ParagraphHelloWorld />
     </>
   );
 }
-
 function HeaderHelloWorld() {
-  return <h1>hello world</h1>;
+  const text = "Hello World";
+  return (
+    <h1 style={{ color: "red", backgroundColor: "yellow" }}>
+      {text.toUpperCase()}
+    </h1>
+  );
 }
 
 function ParagraphHelloWorld() {
-  return <p>selamat belajar reactjs dari dwi</p>;
+  const text = "Selamat belajar reactjs";
+  return <p>{text.toUpperCase()}</p>;
 }
