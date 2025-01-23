@@ -1,8 +1,16 @@
 export default function HelloWorld() {
   return (
     <>
-      <h1>hello world</h1>
-      <p>selamat belajar reactjs dari dwi</p>
+      <HeaderHelloWorld />
+      <ParagraphHelloWorld />
     </>
   );
+}
+
+function HeaderHelloWorld() {
+  return <h1>hello world</h1>;
+}
+
+function ParagraphHelloWorld() {
+  return <p>selamat belajar reactjs dari dwi</p>;
 }
