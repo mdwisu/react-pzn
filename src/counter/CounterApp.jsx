@@ -10,8 +10,7 @@ export default function CounterApp() {
 
   return (
     <div>
-      <Counter name="1" />
-      {show2 && <Counter name="2" />}
+      {show2 ? <Counter key="1" name="1" /> : <Counter key="2" name="2" />}
       <input type="checkbox" checked={show2} onChange={handleChange} />
     </div>
   );
