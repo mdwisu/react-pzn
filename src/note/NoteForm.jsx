@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NotesDispatchContext } from "./NoteContect";
 
-export default function NoteForm({ onAddNote }) {
+export default function NoteForm() {
   const [text, setText] = useState("");
+  const dispatch = useContext(NotesDispatchContext);
   const handleChange = (e) => setText(e.target.value);
   const handleClick = () => {
     setText("");
-    onAddNote(text);
+    dispatch({
+      type: "ADD_NOTE",
+      text: text,
+    });
   };
   return (
     <>
