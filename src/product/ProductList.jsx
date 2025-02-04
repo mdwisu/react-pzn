@@ -14,10 +14,16 @@ export default function ProductList() {
   }, []);
 
   useEffect(() => {
+    async function fetchProduct() {
+      const response = await fetch("/product.json");
+      const data = await response.json();
+      setProduct(data);
+      // fetch("/product.json")
+      //   .then((res) => res.json())
+      //   .then((data) => setProduct(data));
+    }
     if (load) {
-      fetch("/product.json")
-        .then((res) => res.json())
-        .then((data) => setProduct(data));
+      fetchProduct();
     }
   }, [load]);
 
