@@ -13,7 +13,14 @@ export default function ProductList() {
         .then(() => (loaded.current = true))
         .catch((err) => console.log(err));
     }
+
+    return () => {
+      // dijalankan saat useEffect selanjutnya dijalankan
+      console.info("product list component unmounted")
+    }
   });
+
+  
   
   return (
     <>
